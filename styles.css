@@ -47,6 +47,35 @@ html, body{
     background-color:  rgb(221, 221, 221);
 }
 
+.graphEX{
+    display: block;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border: #008080;
+    border: 1rem; 
+    text-align: center;
+    padding-bottom: 2rem; 
+}
+
+.adjacencyList{
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right:auto;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.adjacencyMatrix{
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right:auto;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
 .para{
     padding-left: 10rem;
     padding-top: 1rem;

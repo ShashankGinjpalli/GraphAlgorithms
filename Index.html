@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src = "index.js"></script>
     
     
     <!-- importing the font awsome icons-->
@@ -44,10 +45,20 @@
             </div>
             <p class = "para align-content-center">
                     Graphs are a way to organize data on a computer. The simplest form of a graph in our daily lives is a recipe which calls for a specific number of ingredients to be added to the mixing bowl in a very specific order in order for the recipe to come out right. Another example of a graph that we see every single time we open our computers is the file management system in our computers. It is simple to see how a file management system is represented by a graph because you cant go to a file that is nested within folders without first going to those folders in order to get to the file, otherwise known as a list of dependencies. Graphs are also useful in services such as the internet, because when you have search engines such as Google, it is a lot simpler to use a graph to represent webpages rather than running through a list of every known website on the internet. Graphs can stored in computers in 2 different ways each of which has its advantages and its disadvantages. These two ways are through forms called adjacency lists and adjacency matrices.
-
             </p>
+            <div class = "graphEX">
+                <img class = "graphEX" src="img/Social-network-links.jpg">
+
+                <br>
+                <p>An Example of how a Graph may be used in social media platforms</p>
+            </div>
+
+
+            
+
+
         </div>
-        
+
 
         <!--Adjacency Lists-->
         <div class = "container-fluid">
@@ -58,6 +69,15 @@
             <p class = "para align-content-center">
                     The first way that Graphs can be stored in a computer is in the form of an adjacency list. The graph is stored in an array of linked lists where each vertex is an element of the array and the linked list represents the vertices of the graph that are connected to the initial vertex. Graphs may also have parameters called weight that are used in order to classify edges and can also be stored in the adjacency list. An adjacency list has the space complexity of the number of vertices + the number of edges in the graph because for each vertex of the graph there spot in the array and for each edge of the graph, there is a node in the linked list. However, this is not the only way to store a graph.
             </p>
+
+            <div class = "adjacencyList">
+                <img class = "adjacencyList" src = "img/AdjacencyList.png">
+                <br>
+                <p>How a Graph is translated into an Adjacency List</p>
+
+            </div>
+
+
         </div>
 
         <!--Adjacency Matrix-->
@@ -69,6 +89,15 @@
                 <p class = "para align-content-center">
                         Another way to store a graph in a computer is using an Adjacency matrix. This is a simpler way of representing a graph for humans because it is easier to understand than looking at an adjacency list. In an adjacency matrix, every element of the matrix Is initially 0 and you traverse down the row looking at the column finding where there is an edge. When the edge is found then you put a 1 down there and continue till you run through the whole graph. The slight disadvantage to an adjacency matrix versus an adjacency list is that the adjacency matrix takes significantly more space to store the graph than using the adjacency list because it has V columns and V rows leading to a space complexity of (V^2).
                 </p>
+
+                <div class = "adjacencyMatrix">
+                    <img class = "adjacencyMatrix" src = "img/AdjacencyMatrix.png">
+
+                    <br>
+                    <p>How the Same graph looks when using the adjacency matrix representation</p>
+
+                </div>
+
             </div>
 
 
@@ -109,28 +138,18 @@
             
 
             
-        <!--Topological Sort-->
-        <div class = "container-fluid">
+        <!--Other Applications-->
+            <div class = "container-fluid">
                 <div class = "heading_box">
-                    <h3 class = "heading">Topological Sort</h3>
+                    <h3 class = "heading">Other Applications</h3>
                 </div>
     
                 <p class = "para align-content-center">
-                        A way to Sort a directed acyclic graph by running DFS on the graph and storing the vertices based on the finishing times of the search. This is useful in order to order a list of dependencies such as the python pip manager so that you can have a list of dependencies. Topological sort is also useful when you have to run through a specific set of instructions in a particular order.
+                        Topological Sort is way to Sort a directed acyclic graph by running DFS on the graph and storing the vertices based on the finishing times of the search. This is useful in order to order a list of dependencies such as the python pip manager so that you can have a list of dependencies. Topological sort is also useful when you have to run through a specific set of instructions in a particular order Another application of the DFS algorithm is used by strongly connected components. By running DFS on the transpose of a graph, it allows you to  find the strongly connected components of a graph. A strongly connected component is a section of a directed graph where you can reach the most vertices and return to the source vertex from the same starting point
                 </p>
             </div>
 
-         <!--Strongly Connected Components-->
-         <div class = "container-fluid">
-                <div class = "heading_box">
-                    <h3 class = "heading">Strongly Connected Components</h3>
-                </div>
-    
-                <p class = "para align-content-center">
-                        Another use for running DFS is that by running DFS on the transpose of a graph, it allows you to  find the strongly connected components of a graph. A strongly connected component is a section of a directed graph where you can reach the most vertices and return to the source vertex from the same starting point
-                </p>
-            </div>
-
+       
              <!--Recap Splitter-->
              <div class = "Intro-Background ">
                     <div class = "container-fluid"> 
@@ -138,15 +157,16 @@
                            <h1 class = "Introduction">Recap</h1>
                            <br>
                     </div>
-                </div>
+            </div>
     
                 <br>
 
-                <div class = "container-fluid">
+            <!--Recap Text-->
+            <div class = "container-fluid">
                         <p class = "para align-content-center">
                                 There are 2 different searches that you can run on a graph, The depth first search and the breadth first search. The breadth first search searches layer by layer using a blanket style search in order to find a node whereas the depth first search tries to find a node by following an edge until it can no longer find a node to go to and then it will backtrack to the last node where it had a different branch. DFS is mainly used for topologically sorting a graph and for finding the strongly connected components of a graph.
                         </p>
-                    </div>
+            </div>
 
 
 
