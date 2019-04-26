@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 
 
-
 html, body{
   height: 100%;
   width: 100%;
@@ -76,6 +75,15 @@ html, body{
     padding-bottom: 2rem;
 }
 
+.SCC{
+    display:block;
+    width: 80%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
 .para{
     padding-left: 10rem;
     padding-top: 1rem;
@@ -85,3 +93,31 @@ html, body{
     font-size: 15pt;
 }
 
+
+.animationPara{
+    text-align: center;
+}
+
+#traverse{
+	display: block;
+	width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 500px;
+    padding-top: 1.5rem;
+    text-align: center;
+    outline: 1em;
+}
+
+
+.node {
+  fill: rgb(221, 221, 221);
+  stroke:  #008080;
+  stroke-width: 1.5px;
+}
+
+.link {
+  fill: none;
+  stroke: #008080;
+  stroke-width: 3px;
+}

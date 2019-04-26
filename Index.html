@@ -10,11 +10,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src = "index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
     
     
-    <!-- importing the font awsome icons-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     
     <!-- Adding the regular stylesheet-->
     <link rel = "stylesheet" href = "styles.css">
@@ -115,38 +113,82 @@
             <br>
 
         <!--BFS Section-->
-            <div class = "container-fluid">
-                <div class = "heading_box">
-                    <h3 class = "heading">Breadth First Search</h3>
+            <div class = "container-fluid" >
+                <div class="row">
+                    <div class="col-md-6" onclick="bft()">
+                            <div class = "heading_box" >
+                                <h3 class = "heading">Breadth First Search</h3>
+                            </div>
+
+                            <p class = "para">BFS is a graph traversal technique where the algorithm tries to hit as many vertices on as many different branches as possible. For BFS the it finds all of the nodes that are connected to a particular vertex and connects to all of
+                                    its adjacent matrices rather than finding one and following that path until there is nothing left. The advantages of BFS are that the solution is guaranteed to be found if there is a solution that exists in the graph. Furthermore,
+                                    if there is more than one solution, in the graph, then it will find the solution with the least number of steps. The major con with bfs, is what happens when the solution is far away. If the solution is far away then the solution
+                                    will take a lot longer to find as opposed to using dfs. (Click Here to start the BFS animation).
+                            </p>
+                    </div>
+
+
+                    <div class="col-md-6" onclick="dft()">
+                        <div class = "heading_box">
+                            <h3 class = "heading">Depth First Search</h3>
+                        </div>
+                    
+                                
+                        <p class = "para">The depth first search algorithm has more applications than that of the breadth first search. As opposed to the bfs algorithm, the dfs search discovers a branch from the root node and then follows that branch until there are no more
+                                    vertices to be found over there. The DFS algorithm is more advantageous than the BFS algorithm because it has a smaller space and time complexity, and it finds the farther away solution a lot faster than bfs. However, even though
+                                    there are space and time complexity benefits by using DFS, it is not always guaranteed to find a solution because it could get stuck in an unwanted alley. Some of the applications of DFS are that it can be used for both finding
+                                    the strongly connected components of a graph and it can topologically sort a graph. (Click Here to start the DFS animation).
+                        </p>
+
+                    </div>
                 </div>
-    
-                <p class = "para align-content-center">
-                        BFS is a graph traversal technique where the algorithm tries to hit as many vertices on as many different branches as possible. For BFS the it finds all of the nodes that are connected to a particular vertex and connects to all of its adjacent matrices rather than finding one and following that path until there is nothing left. The advantages of BFS are that the solution is guaranteed to be found if there is a solution that exists in the graph. Furthermore, if there is more than one solution, in the graph, then it will find the solution with the least number of steps. The major con with bfs, is what happens when the solution is far away. If the solution is far away then the solution will take a lot longer to find as opposed to using dfs.
-                </p>
             </div>
 
-        <!--DFS Section-->
+
             <div class = "container-fluid">
-                <div class = "heading_box">
-                    <h3 class = "heading">Depth First Search</h3>
+                
+                <br>
+
+                <p class = "animationPara" >How BFS and DFS run given a graph.</p>
+
+                <div id="traverse" onclick="resetTraversal()">
+                    <script src="index.js"></script> 
                 </div>
-    
-                <p class = "para align-content-center">
-                        The depth first search algorithm has more applications than that of the breadth first search. As opposed to the bfs algorithm, the dfs search discovers a branch from the root node and then follows that branch until there are no more vertices to be found over there. The DFS algorithm is more advantageous than the BFS algorithm because it has a smaller space and time complexity, and it finds the farther away solution a lot faster than bfs. However, even though there are space and time complexity benefits by using DFS, it is not always guaranteed to find a solution because it could get stuck in an unwanted alley. Some of the applications of DFS are that it can be used for both finding the strongly connected components of a graph and it can topologically sort a graph.
-                </p>
+
+                <p class = "animationPara" >Press the Graph to Reset the Animation</p>
             </div>
-            
+                
 
             
         <!--Other Applications-->
             <div class = "container-fluid">
-                <div class = "heading_box">
-                    <h3 class = "heading">Other Applications</h3>
-                </div>
-    
+
+                    <div class = "heading_box">
+                            <h3 class = "heading">Other Applications</h3>
+                        </div>
+                
+                <div class = "row">
+                
+                
+                
+                <div class = "col-md-6">
                 <p class = "para align-content-center">
                         Topological Sort is way to Sort a directed acyclic graph by running DFS on the graph and storing the vertices based on the finishing times of the search. This is useful in order to order a list of dependencies such as the python pip manager so that you can have a list of dependencies. Topological sort is also useful when you have to run through a specific set of instructions in a particular order Another application of the DFS algorithm is used by strongly connected components. By running DFS on the transpose of a graph, it allows you to  find the strongly connected components of a graph. A strongly connected component is a section of a directed graph where you can reach the most vertices and return to the source vertex from the same starting point
                 </p>
+                </div>
+                
+                <div class = "col-md-6">
+                <div class = "SCC">
+                    <img src = "img/SCC.png" class = "SCC">
+
+                    <br>
+                    <p>
+                        How Strongly Connected Components look in a graph
+                    </p>
+                </div>
+            </div>
+            </div>
+
             </div>
 
        
